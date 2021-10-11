@@ -9,7 +9,7 @@ const connectDB=require('./config/bdd.js')
 dotenv.config({path:'./config/config.env'})
 
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json())
 
 connectDB()

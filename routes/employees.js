@@ -18,7 +18,7 @@ res.status(401).json({code:401,message:'error'})
         }else{
 res.send(newEmployees)
         }
-    })
+})
     .catch(error=>{
         res.send(error).status(500)
     })

@@ -8,7 +8,7 @@ const path=require('path')
 
 
 router.post('/inscription',(req,res)=>{
-    bcrypt.hash(req.body.password,10)
+    bcrypt.hash(req.body.password,5)
     .then(hash=>{
         const newEntreprise=new entrepriseSchema({
         password:hash,
@@ -25,8 +25,10 @@ router.post('/inscription',(req,res)=>{
               }
     })
 })
+.catch(err=>{
+    res.send(err).status(500)
 })
-
+})
 
 router.post('/connexion',(req,res)=>{
     entrepriseSchema.findOne({entrepriseName:req.body.entrepriseName })
